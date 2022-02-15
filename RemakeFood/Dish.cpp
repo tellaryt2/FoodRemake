@@ -1,3 +1,16 @@
 #include "Dish.h"
 
-using namespace std;
+string Dish::GetServingSize()
+{
+
+}
+
+string Dish::GetName()
+{
+
+}
+
+double Dish::GetPricePorcion()
+{
+	return 0.0;
+}
