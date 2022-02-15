@@ -1,2 +1,3 @@
 ﻿  main.cpp
-  RemakeFood.vcxproj -> C:\Users\minne\source\repos\RemakeFood\x64\Debug\RemakeFood.exe
+  LINK : не найден или не выполнена сборка C:\Users\minne\source\repos\FoodRemake\x64\Debug\RemakeFood.exe при последней инкрементной компоновке; выполняется полная компоновка
+  RemakeFood.vcxproj -> C:\Users\minne\source\repos\FoodRemake\x64\Debug\RemakeFood.exe
