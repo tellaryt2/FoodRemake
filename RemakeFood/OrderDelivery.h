@@ -5,6 +5,9 @@ class OrderDelivery : public Order
 {
 public:
 	OrderDelivery(string FIO, string number, string adress);
+	void RemakeStatus(status newStatus);
+
 private:
 	string AdressDelivery;
+
 };

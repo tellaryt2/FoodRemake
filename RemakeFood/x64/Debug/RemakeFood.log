@@ -1,6 +1,7 @@
-﻿  Dish.cpp
-  main.cpp
+﻿  main.cpp
   Order.cpp
+  OrderDelivery.cpp
+  OrderPickup.cpp
   Restaurant.cpp
   Создание кода...
   RemakeFood.vcxproj -> C:\Users\minne\source\repos\FoodRemake\x64\Debug\RemakeFood.exe
