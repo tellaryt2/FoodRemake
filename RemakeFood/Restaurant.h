@@ -11,7 +11,11 @@ using namespace std;
 class Restaurant
 {
 public:
-
+	OrderDelivery OrderingDelibvery(OrderDelivery order);
+	OrderPickup OrderingPickup(OrderPickup order);
+	bool Pay(Order order);
+	void Cancel(Order order);
+	void ConfirmReceipt(Order order);
 
 private:
 	string Name;
