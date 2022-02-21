@@ -7,7 +7,7 @@ class Dish
 {
 public:
 	Dish(string name, string size, double price);
-	//dish(dish dish) конструктор копирования
+	Dish(Dish *dish);
 	string GetName();
 	string GetServingSize(); // int
 	double GetPricePorcion();

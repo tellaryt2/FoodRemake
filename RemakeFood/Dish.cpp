@@ -12,6 +12,15 @@ Dish::Dish(string name, string size, double price)
 	this->PricePorcion = price;
 }
 
+
+
+Dish::Dish(Dish* dish)
+{
+	this->Name = dish->Name;
+	this->PricePorcion = dish->PricePorcion;
+	this->ServingSize = dish->ServingSize;
+}
+
 string Dish::GetName()
 {
 	return this->Name;
@@ -37,5 +46,3 @@ void Dish::SetServingSize(string size)
 	this->ServingSize = size;
 }
 
-
-//исключения (шоб не пустое добавлялось)
