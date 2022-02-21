@@ -1,11 +1,11 @@
 #include "Dish.h"
 
-string Dish::GetServingSize()
+int Dish::GetServingSize()
 {
 	return this->ServingSize;
 }
 
-Dish::Dish(string name, string size, double price)
+Dish::Dish(string name, int size, double price)
 {
 	this->Name = name;
 	this->ServingSize = size;
@@ -41,7 +41,7 @@ void Dish::SetPricePorcion(double price)
 	this->PricePorcion = price;
 }
 
-void Dish::SetServingSize(string size)
+void Dish::SetServingSize(int size)
 {
 	this->ServingSize = size;
 }
