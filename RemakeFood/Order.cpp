@@ -7,6 +7,13 @@ Order::Order(string FIO, string number, Dish dish)
 	Dishs.push_back(make_pair(dish, 1));
 }
 
+Order::Order()
+{
+	this->ClientFIO = "";
+	this->PhoneNumber = "";
+}
+
+
 string Order::GetClientFIO()
 {
 	return this->ClientFIO;

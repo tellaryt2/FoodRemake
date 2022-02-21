@@ -9,6 +9,7 @@ class Order
 {
 public:
 	Order(string FIO, string number, Dish dish);
+	Order();
 	string GetClientFIO();
 	string GetPhoneNumber();
 	void AddDish(Dish dish);
