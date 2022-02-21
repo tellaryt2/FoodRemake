@@ -37,7 +37,17 @@ void Order::AddDish(Dish dish)
 
 void Order::DeleteDish(Dish dish)
 {
-	//если pair 0 или 0 < , то удалить блюдо
+	for (auto i = Dishs.begin(); i != Dishs.end(); i++)
+	{
+		ThisDishs = i;
+		if (dish.GetName() == ThisDishs->first.GetName())
+		{
+			if (ThisDishs->second <= 0)
+			{
+				Dishs.erase(ThisDishs);
+			}
+		}
+	}
 }
 
 double Order::CalculatedPrice(Dish dish)
