@@ -15,4 +15,6 @@ private:
 	string Adress;
 	list <Order> Orders;
 	list <Dish> Menu;
+
+	// _dsfsdf
 };

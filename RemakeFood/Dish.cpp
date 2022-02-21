@@ -36,3 +36,6 @@ void Dish::SetServingSize(string size)
 {
 	this->ServingSize = size;
 }
+
+
+//исключения (шоб не пустое добавлялось)
