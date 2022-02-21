@@ -18,11 +18,21 @@ string Order::GetPhoneNumber()
 }
 
 
-Dish Order::AddDish(Dish dish)
+void Order::AddDish(Dish dish)
 {
-
-	// если блюдо уже есть в данном списке, вторую часть pair увеличить
-	//если не блюда add(dish,1)
+	for (auto i = Dishs.begin(); i != Dishs.end(); i++)
+	{
+		ThisDishs = i;
+		if (dish.GetName() == ThisDishs->first.GetName())
+		{
+			ThisDishs->second++;
+		}
+		else
+		{
+			Dishs.push_back(make_pair(dish, 1));
+			return;
+		}
+	}
 }
 
 void Order::DeleteDish(Dish dish)

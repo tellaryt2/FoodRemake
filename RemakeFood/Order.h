@@ -11,7 +11,7 @@ public:
 	Order(string FIO, string number, Dish dish);
 	string GetClientFIO();
 	string GetPhoneNumber();
-	Dish AddDish(Dish dish);
+	void AddDish(Dish dish);
 	void DeleteDish(Dish dish);
 	double CalculatedPrice(Dish dish);
 
@@ -22,7 +22,8 @@ protected:
 private:
 	string ClientFIO;
 	string PhoneNumber;
-	list <pair <Dish, double> > Dishs;  
+	list <pair <Dish, double>> Dishs;
+	list<pair <Dish, double>>::iterator ThisDishs = Dishs.begin();
 };
 
 //switch(status)

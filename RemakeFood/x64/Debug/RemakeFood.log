@@ -1,24 +1,6 @@
 ﻿  Dish.cpp
-C:\Users\minne\source\repos\FoodRemake\RemakeFood\Dish.h(7,9): error C3646: GetName: неизвестный спецификатор переопределения
-C:\Users\minne\source\repos\FoodRemake\RemakeFood\Dish.h(7,16): error C2059: синтаксическая ошибка: (
-C:\Users\minne\source\repos\FoodRemake\RemakeFood\Dish.h(7,18): error C2238: непредвиденные лексемы перед ";"
-C:\Users\minne\source\repos\FoodRemake\RemakeFood\Dish.h(8,9): error C3646: GetServingSize: неизвестный спецификатор переопределения
-C:\Users\minne\source\repos\FoodRemake\RemakeFood\Dish.h(8,23): error C2059: синтаксическая ошибка: (
-C:\Users\minne\source\repos\FoodRemake\RemakeFood\Dish.h(8,25): error C2238: непредвиденные лексемы перед ";"
-C:\Users\minne\source\repos\FoodRemake\RemakeFood\Dish.h(12,9): error C3646: Name: неизвестный спецификатор переопределения
-C:\Users\minne\source\repos\FoodRemake\RemakeFood\Dish.h(12,13): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
-C:\Users\minne\source\repos\FoodRemake\RemakeFood\Dish.h(14,9): error C3646: ServingSize: неизвестный спецификатор переопределения
-C:\Users\minne\source\repos\FoodRemake\RemakeFood\Dish.h(14,20): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
-C:\Users\minne\source\repos\FoodRemake\RemakeFood\Dish.cpp(5,14): error C2039: "GetName": не является членом "Dish".
-C:\Users\minne\source\repos\FoodRemake\RemakeFood\Dish.h(4): message : см. объявление "Dish"
   main.cpp
-C:\Users\minne\source\repos\FoodRemake\RemakeFood\Restaurant.h(8,9): error C3646: Name: неизвестный спецификатор переопределения
-C:\Users\minne\source\repos\FoodRemake\RemakeFood\Restaurant.h(8,13): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
-C:\Users\minne\source\repos\FoodRemake\RemakeFood\Restaurant.h(9,9): error C3646: Adress: неизвестный спецификатор переопределения
-C:\Users\minne\source\repos\FoodRemake\RemakeFood\Restaurant.h(9,15): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+  Order.cpp
   Restaurant.cpp
-C:\Users\minne\source\repos\FoodRemake\RemakeFood\Restaurant.h(8,9): error C3646: Name: неизвестный спецификатор переопределения
-C:\Users\minne\source\repos\FoodRemake\RemakeFood\Restaurant.h(8,13): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
-C:\Users\minne\source\repos\FoodRemake\RemakeFood\Restaurant.h(9,9): error C3646: Adress: неизвестный спецификатор переопределения
-C:\Users\minne\source\repos\FoodRemake\RemakeFood\Restaurant.h(9,15): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
   Создание кода...
+  RemakeFood.vcxproj -> C:\Users\minne\source\repos\FoodRemake\x64\Debug\RemakeFood.exe
