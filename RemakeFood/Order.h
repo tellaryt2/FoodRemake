@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "Dish.h"
+#include <list>
 
 using namespace std;
 
@@ -15,12 +16,13 @@ public:
 	double CalculatedPrice(Dish dish);
 
 protected:
+
 	enum status { Create = 1, Payed, Taked, OnTheWay, Cancelled };
+
 private:
 	string ClientFIO;
 	string PhoneNumber;
-	//status
-	pair <Dish, double> Dishs;  //list
+	list <pair <Dish, double> >Dishs;  //list
 };
 
 //switch(status)
