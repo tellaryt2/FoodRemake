@@ -8,9 +8,9 @@ using namespace std;
 class Order
 {
 public:
+	Order(string FIO, string number, Dish dish);
 	string GetClientFIO();
 	string GetPhoneNumber();
-	void MakeOrder(string FIO, string number); //сделать конструктор из этого
 	Dish AddDish(Dish dish);
 	void DeleteDish(Dish dish);
 	double CalculatedPrice(Dish dish);
@@ -22,7 +22,7 @@ protected:
 private:
 	string ClientFIO;
 	string PhoneNumber;
-	list <pair <Dish, double> >Dishs;  //list
+	list <pair <Dish, double> > Dishs;  
 };
 
 //switch(status)

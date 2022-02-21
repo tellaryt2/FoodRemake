@@ -1,5 +1,12 @@
 #include "Order.h"
 
+Order::Order(string FIO, string number, Dish dish)
+{
+	this->ClientFIO = FIO;
+	this->PhoneNumber = number;
+	Dishs.push_back(make_pair(dish, 1));
+}
+
 string Order::GetClientFIO()
 {
 	return this->ClientFIO;
@@ -10,13 +17,10 @@ string Order::GetPhoneNumber()
 	return this->PhoneNumber;
 }
 
-void Order::MakeOrder(string FIO, string number)
-{
-
-}
 
 Dish Order::AddDish(Dish dish)
 {
+
 	// если блюдо уже есть в данном списке, вторую часть pair увеличить
 	//если не блюда add(dish,1)
 }
