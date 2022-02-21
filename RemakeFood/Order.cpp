@@ -52,9 +52,16 @@ void Order::DeleteDish(Dish dish)
 
 double Order::CalculatedPrice(Dish dish)
 {
-	/* price = dish.GetPricePorcion() * Dishs(dish, GetCountPorcies() ) */
-
-	//dish - размер порции и цена
-	// for () total += list[i].price * list[i].double
-	return 0.0;
+	double totalPrice = 0;
+	for (auto i = Dishs.begin(); i != Dishs.end(); i++)
+	{
+		ThisDishs = i;
+		if (dish.GetName() == ThisDishs->first.GetName())
+		{
+			double Price = ThisDishs->first.GetPricePorcion();
+			Price *= ThisDishs->second;
+			totalPrice += Price;
+		}
+	}
+	return totalPrice;
 }
