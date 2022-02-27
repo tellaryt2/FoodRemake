@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Restaurant.h"
 
-OrderDelivery Restaurant::OrderingDelibvery()
+void Restaurant::OrderingDelibvery()
 {
 	cout << "Enter FIO: ";
 	string fio;
@@ -13,16 +13,45 @@ OrderDelivery Restaurant::OrderingDelibvery()
 	string adress;
 	cin >> adress;
 	cout << "choose a dish: ";
+	int indexDish;
+	cin >> indexDish;
+	ThisMenu = Menu.begin();
+	for (auto i = Menu.begin(); i != Menu.end(); i++)
+	{
+		if (indexDish == ThisMenu->second)
+		{
+			break;
+		}
+		ThisMenu = i;
+	}
+	Order newOrder(fio, number, ThisMenu->first);
 
-	OrderDelivery newOrderDelivery(fio, number, adress);
-
-	Orders.push_back(newOrderDelivery);
-	return newOrderDelivery;
+	Orders.push_back(newOrder);
 }
 
-OrderPickup Restaurant::OrderingPickup()
+void Restaurant::OrderingPickup()
 {
-	return ;
+	cout << "Enter FIO: ";
+	string fio;
+	cin >> fio;
+	cout << "Enter number telephone: ";
+	string number;
+	cin >> number;
+	cout << "choose a dish: ";
+	int indexDish;
+	cin >> indexDish;
+	ThisMenu = Menu.begin();
+	for (auto i = Menu.begin(); i != Menu.end(); i++)
+	{
+		if (indexDish == ThisMenu->second)
+		{
+			break;
+		}
+		ThisMenu = i;
+	}
+	Order newOrder(fio, number, ThisMenu->first);
+
+	Orders.push_back(newOrder);
 }
 
 bool Restaurant::Pay(Order order)
