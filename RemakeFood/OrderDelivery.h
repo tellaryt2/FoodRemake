@@ -7,7 +7,7 @@ public:
 	OrderDelivery(string FIO, string number, string adress);
 	void RemakeStatus(status newStatus);
 
-private:
+protected:
 	string AdressDelivery;
 
 };

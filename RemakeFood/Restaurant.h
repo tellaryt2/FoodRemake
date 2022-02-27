@@ -11,8 +11,8 @@ using namespace std;
 class Restaurant
 {
 public:
-	OrderDelivery OrderingDelibvery(OrderDelivery order);
-	OrderPickup OrderingPickup(OrderPickup order);
+	OrderDelivery OrderingDelibvery();
+	OrderPickup OrderingPickup();
 	bool Pay(Order order);
 	void Cancel(Order order);
 	void ConfirmReceipt(Order order);
@@ -24,7 +24,7 @@ private:
 	string Name;
 	string Adress;
 	list <Order> Orders;
-	list <Dish> Menu;
-	list <Dish>::iterator ThisMenu = Menu.begin();
-
+	list <pair <Dish, int>> Menu;
+	list <pair <Dish, int>>::iterator ThisMenu = Menu.begin();
+	int CounterMenu = 1;
 };
