@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Restaurant.h"
 
 OrderDelivery Restaurant::OrderingDelibvery(OrderDelivery order)
@@ -40,5 +41,16 @@ void Restaurant::DeleteDishInMenu(Dish dish)
 			Menu.erase(ThisMenu);
 			return;
 		}
+	}
+}
+
+void Restaurant::ShowMenu()
+{
+	for (auto i = Menu.begin(); i != Menu.end(); i++)
+	{
+		ThisMenu = i;
+		cout << "name: " << ThisMenu->GetName() << "\t" 
+			<< "ServingSize: " << ThisMenu->GetServingSize() << "\t" 
+			<< "PricePorcion: " << ThisMenu->GetPricePorcion();		
 	}
 }

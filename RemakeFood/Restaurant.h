@@ -18,6 +18,7 @@ public:
 	void ConfirmReceipt(Order order);
 	void AddDishInMenu(Dish dish);
 	void DeleteDishInMenu(Dish dish);
+	void ShowMenu();
 
 private:
 	string Name;
