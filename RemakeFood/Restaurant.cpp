@@ -24,3 +24,21 @@ void Restaurant::ConfirmReceipt(Order order)
 {
 
 }
+
+void Restaurant::AddDishInMenu(Dish dish)
+{
+	Menu.push_back(dish);
+}
+
+void Restaurant::DeleteDishInMenu(Dish dish)
+{
+	for (auto i = Menu.begin(); i != Menu.end(); i++)
+	{
+		ThisMenu = i;
+		if (ThisMenu->GetName() == dish.GetName())
+		{
+			Menu.erase(ThisMenu);
+			return;
+		}
+	}
+}
