@@ -9,14 +9,14 @@ class Order
 {
 public:
 	enum Status { Create = 1, Payed, Taked, OnTheWay, Cancelled };
-	void ChangeStatus(Status& status);
+	virtual void ChangeStatus(Status& status);
 	Order(string FIO, string number, Dish dish);
 	Order();
 	string GetClientFIO();
 	string GetPhoneNumber();
 	void AddDish(Dish dish);
 	void DeleteDish(Dish dish);
-	double CalculatedPrice(Dish dish); //
+	virtual double CalculatedPrice(Dish dish); //
 private:
 	string ClientFIO;
 	string PhoneNumber;

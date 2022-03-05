@@ -1,6 +1,6 @@
 #include "Order.h"
 
-void Order::ChangeStatus(Status& status)
+void Order::ChangeStatus(Status& status) 
 {
 	switch (status)
 	{

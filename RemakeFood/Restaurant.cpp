@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Restaurant.h"
 
-void Restaurant::OrderingDelibvery()
+void Restaurant::OrderingDelibvery(string adress)
 {
 	cout << "Enter FIO: ";
 	string fio;
@@ -9,9 +9,6 @@ void Restaurant::OrderingDelibvery()
 	cout << "Enter number telephone: ";
 	string number;
 	cin >> number;
-	cout << "Enter adress: ";
-	string adress;
-	cin >> adress;
 	cout << "choose a dish: ";
 	int indexDish;
 	cin >> indexDish;
