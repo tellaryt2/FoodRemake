@@ -8,7 +8,8 @@ using namespace std;
 class Order
 {
 public:
-	//енам
+	enum Status { Create = 1, Payed, Taked, OnTheWay, Cancelled };
+	void ChangeStatus(Status& status);
 	Order(string FIO, string number, Dish dish);
 	Order();
 	string GetClientFIO();
@@ -16,11 +17,6 @@ public:
 	void AddDish(Dish dish);
 	void DeleteDish(Dish dish);
 	double CalculatedPrice(Dish dish); //виртуальная
-
-protected:
-
-	enum status { Create = 1, Payed, Taked, OnTheWay, Cancelled }; //доставлен
-	//изменение статуса функция()
 private:
 	string ClientFIO;
 	string PhoneNumber;

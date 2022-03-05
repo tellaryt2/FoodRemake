@@ -88,14 +88,4 @@ void Restaurant::DeleteDishInMenu(Dish dish)
 	}
 }
 
-void Restaurant::ShowMenu() //ввод-вывод не правильно
-{
-	for (auto i = Menu.begin(); i != Menu.end(); i++)
-	{
-		ThisMenu = i;
-		cout << ThisMenu->second << ") " 
-			<< "name: " << ThisMenu->first.GetName() << "\t" 
-			<< "ServingSize: " << ThisMenu->first.GetServingSize() << "\t" 
-			<< "PricePorcion: " << ThisMenu->first.GetPricePorcion();
-	}
-}
+

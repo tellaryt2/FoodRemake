@@ -1,5 +1,38 @@
 #include "Order.h"
 
+void Order::ChangeStatus(Status& status)
+{
+	switch (status)
+	{
+		case Order::Create:
+		{
+			status = Payed;
+			break;
+		}
+	
+		case Order::Payed:
+		{
+			status = Taked;
+			break;
+		}
+
+		case Order::Taked:
+		{
+			status = OnTheWay;
+			break;
+		}
+
+		case Order::OnTheWay:
+		{
+			status = Cancelled;
+			break;
+		}
+
+		default:
+			break;
+	}
+}
+
 Order::Order(string FIO, string number, Dish dish)
 {
 	this->ClientFIO = FIO;
