@@ -11,7 +11,7 @@ using namespace std;
 class Restaurant
 {
 public:
-	void OrderingDelibvery();
+	void OrderingDelibvery(/*адрес*/);
 	void OrderingPickup();
 	bool Pay(Order order);
 	void Cancel(Order order);

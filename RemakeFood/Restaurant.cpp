@@ -88,7 +88,7 @@ void Restaurant::DeleteDishInMenu(Dish dish)
 	}
 }
 
-void Restaurant::ShowMenu()
+void Restaurant::ShowMenu() //ввод-вывод не правильно
 {
 	for (auto i = Menu.begin(); i != Menu.end(); i++)
 	{
