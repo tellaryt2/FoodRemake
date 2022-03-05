@@ -16,7 +16,7 @@ public:
 	string GetPhoneNumber();
 	void AddDish(Dish dish);
 	void DeleteDish(Dish dish);
-	double CalculatedPrice(Dish dish); //виртуальная
+	double CalculatedPrice(Dish dish); //
 private:
 	string ClientFIO;
 	string PhoneNumber;
@@ -24,7 +24,3 @@ private:
 	list<pair <Dish, double>>::iterator ThisDishs = Dishs.begin();
 };
 
-//switch(status)
-//case(create) if ...
-
-//изменение статуса функция()
