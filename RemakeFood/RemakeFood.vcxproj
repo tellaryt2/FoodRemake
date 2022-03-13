@@ -145,13 +145,18 @@
     <ClCompile Include="OrderDelivery.cpp" />
     <ClCompile Include="OrderPickup.cpp" />
     <ClCompile Include="Restaurant.cpp" />
+    <ClCompile Include="SClient.cpp" />
+    <ClCompile Include="SServer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dish.h" />
+    <ClInclude Include="Includes.h" />
     <ClInclude Include="Order.h" />
     <ClInclude Include="OrderDelivery.h" />
     <ClInclude Include="OrderPickup.h" />
     <ClInclude Include="Restaurant.h" />
+    <ClInclude Include="SClient.h" />
+    <ClInclude Include="SServer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
