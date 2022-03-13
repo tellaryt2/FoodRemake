@@ -1,4 +1,3 @@
-﻿  SClient.cpp
-  SServer.cpp
-  Создание кода...
+﻿  main.cpp
+C:\Users\minne\source\repos\FoodRemake\RemakeFood\main.cpp(72,7): warning C4101: buffer: неиспользованная локальная переменная
   RemakeFood.vcxproj -> C:\Users\minne\source\repos\FoodRemake\x64\Debug\RemakeFood.exe
