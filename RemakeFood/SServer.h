@@ -9,7 +9,7 @@ public:
 	void startServer();
 	void closeServer();
 	void handle();
-	unsigned short port;
+	unsigned short port = 333;
 private:
 	SOCKET this_s;
 	WSAData wData;
