@@ -1,84 +1,69 @@
-#define _WINSOCK_DEPRECATED_NO_WARNINGS
-#include <iostream> 
-#include <cstdio> 
-#include <cstring> 
-#include <winsock2.h> 
-
-#pragma comment(lib, "WS2_32.lib")
-using namespace std;
-
-DWORD WINAPI clientReceive(LPVOID lpParam) { 
-	char buffer[1024] = { 0 };
-	SOCKET server = *(SOCKET*)lpParam;
-	while (true)
-	{
-		if (recv(server, buffer, sizeof(buffer), 0) == SOCKET_ERROR) {
-			cout << "recv function failed with error: "
-				<< WSAGetLastError() << endl;
-			return -1;
-		}
-		if (strcmp(buffer, "exit\n") == 0) {
-			cout << "Server disconnected." << endl;
-			return 1;
-		}
-		cout << "Server: " << buffer << endl;
-		memset(buffer, 0, sizeof(buffer));
-	}
-	return 1;
-}
-
-DWORD WINAPI clientSend(LPVOID lpParam)
-{ 
-	char buffer[1024] = { 0 };
-	SOCKET server = *(SOCKET*)lpParam;
-	while (true) {
-		fgets(buffer, 1024, stdin);
-		if (send(server, buffer, sizeof(buffer), 0) == SOCKET_ERROR) {
-			cout << "send failed with error: "
-				<< WSAGetLastError() << endl;
-			return -1;
-		}
-		if (strcmp(buffer, "exit") == 0) {
-			cout << "Thank you for using the application" << endl;
-			break;
-		}
-	}
-	return 1;
-}
+#include "Client.h"
 
 int main()
 {
-	WSADATA WSAData;
-	SOCKET server;
-	SOCKADDR_IN addr;
-	WSAStartup(MAKEWORD(2, 0), &WSAData);
-	if ((server = socket(AF_INET, SOCK_STREAM, 0)) == INVALID_SOCKET) {
-		cout << "Socket creation failed with error: "
-			<< WSAGetLastError() << endl;
-		return -1;
+	setlocale(LC_ALL, "ru");
+	Client client;
+
+	int result;
+	result = WSAStartup(MAKEWORD(2, 2), &client.WSAData);
+	if (result != 0)
+	{
+		cout << "Ошибка WSAStartup: " << result << endl;
+		return 1;
 	}
 
-	addr.sin_addr.s_addr = inet_addr("127.0.0.1"); 
-	addr.sin_family = AF_INET;
-	addr.sin_port = htons(3487); 
-	if (connect(server, (SOCKADDR*)&addr, sizeof(addr)) == SOCKET_ERROR) {
-		cout << "Server connection failed with error: "
-			<< WSAGetLastError() << endl;
-		return -1;
+	client.server = INVALID_SOCKET;
+	client.server = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+	if (client.server == INVALID_SOCKET)
+	{
+		cout << "Ошибка socket(): " << WSAGetLastError() << endl;
+		WSACleanup();
+		return 1;
 	}
 
-	cout << "Connected to server!" << endl;
-	cout << "Now you can use our live chat application. "
-		<< " Enter \"exit\" to disconnect" << endl;
+	sockaddr_in clientService;
+	clientService.sin_family = AF_INET;
+	clientService.sin_addr.s_addr = inet_addr("89.108.127.148");
+	clientService.sin_port = htons(80);
 
-	DWORD tid;
-	HANDLE t1 = CreateThread(NULL, 0, clientReceive, &server, 0, &tid);
-	if (t1 == NULL) cout << "Thread creation error: " << GetLastError();
-	HANDLE t2 = CreateThread(NULL, 0, clientSend, &server, 0, &tid);
-	if (t2 == NULL) cout << "Thread creation error: " << GetLastError();
+	int result1 = connect(
+		client.server,
+		reinterpret_cast<SOCKADDR*>(&clientService),
+		sizeof(clientService)
+	);
+	if (result1 != 0)
+	{
+		cout << "Ошибка в connect(): " << WSAGetLastError() << endl;
+		WSACleanup();
+		return 1;
+	}
 
-	WaitForSingleObject(t1, INFINITE);
-	WaitForSingleObject(t2, INFINITE);
-	closesocket(server);
+	int result2;
+	char data[] = "Test";
+	result2 = send(client.server, data, static_cast<int>(strlen(data)), 0);
+	if (result2 < 0)
+	{
+		std::cout << "Ошибка в send(): " << WSAGetLastError() << std::endl;
+		return 1;
+	}
+
+	char buf[256];
+	int r;
+	do
+	{
+		r = recv(client.server, buf, client.server, 0);
+		if (r > 0)
+			std::cout << "Принятно " << r << " байт" << std::endl;
+		else if (r == 0)
+			std::cout << "Соединение разорвано" << std::endl;
+		else
+			std::cout << "Ошибка в recv(): " << WSAGetLastError() << std::endl;
+	} while (r > 0);
+
+	closesocket(client.server);
+	// Если работа с сокетами больше не предполагается вызываем WSACleanup()
 	WSACleanup();
 }
+
+
